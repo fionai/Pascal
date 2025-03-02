@@ -34,20 +34,17 @@ void main()
 				cout << 1 << "     ";
 				num2[k] = 1;
 				k++;
-				for (int f = 0; f < s*2; f ++)
+				for (int f = 0; f < s; f++)
 				{
-					if (f % 2)
-					{
-						num2[k] = num[k - 1] + num[k];
-						cout << num2[k];
-						
-						if		(num2[k] < 10) cout << "     ";
-						else if (num2[k] < 100) cout << "    ";
-						else if (num2[k] < 1000) cout << "   ";
-						else if (num2[k] < 10000) cout << "  ";
-						else if (num2[k] < 100000) cout << " ";
-						k++;
-					}
+					num2[k] = num[k - 1] + num[k];
+					cout << num2[k];
+
+					if (num2[k] < 10) cout << "     ";
+					else if (num2[k] < 100) cout << "    ";
+					else if (num2[k] < 1000) cout << "   ";
+					else if (num2[k] < 10000) cout << "  ";
+					else if (num2[k] < 100000) cout << " ";
+					k++;
 				}
 			}
 			else
