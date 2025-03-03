@@ -28,12 +28,12 @@ void main()
 		k = 0;
 		for (int j = 0; j < n - i; j++)
 		{
-			if (j == n - i - 1)
+			if (j == n - i - 1) // находим позицию первого числа строки
 			{
 				num2[k] = 1;
 				cout << num2[k] << "     ";
 				k++;
-				for (int f = 0; f < i; f++)
+				for (int f = 0; f < i; f++) //после первого числа дописываем строку из i элементов
 				{
 					num2[k] = num[k - 1] + num[k];
 					cout << num2[k];
