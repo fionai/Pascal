@@ -30,8 +30,8 @@ void main()
 		{
 			if (j == n - i - 1)
 			{
-				cout << 1 << "     ";
 				num2[k] = 1;
+				cout << num2[k] << "     ";
 				k++;
 				for (int f = 0; f < i; f++)
 				{
