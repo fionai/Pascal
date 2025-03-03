@@ -52,7 +52,7 @@ void main()
 		num2[k] = 0;
 		cout << endl << endl;
 
-		for (int j = 0; j <= i+1; j++) //запоминаем текущий массив
+		for (int j = 0; j <= k; j++) //запоминаем текущий массив
 			num[j] = num2[j];
 	}
 
