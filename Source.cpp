@@ -1,5 +1,7 @@
 #include <iostream>
 using namespace std;
+//#define PASCAL_ARR
+#define PASCAL_CLEAR
 
 //=======================================
 // Ѕ≈« ћј——»¬ќ¬ Ќ≈ —ћќ√Ћј
@@ -8,6 +10,8 @@ using namespace std;
 void main()
 {
 	setlocale(LC_ALL, "");
+
+#ifdef PASCAL_ARR
 
 	int n, k;
 	int num[22], num2[22]; // num - предыдущий массив, num2 - новый, формируемый в данный момент
@@ -55,5 +59,57 @@ void main()
 		for (int j = 0; j <= k; j++) //запоминаем текущий массив
 			num[j] = num2[j];
 	}
+#endif // PASCAL_ARR
+
+#ifdef PASCAL_CLEAR
+
+
+	int n;
+	double num; // ввела доп.число, чтобы не было переполнени€ разр€дов
+	int num2, len;
+
+	cout << "“–≈”√ќЋ№Ќ»  ѕј— јЋя\n";
+	cout << "¬ведите высоту треугольника (количество строк): ";
+	cin >> n;
+
+
+	for (int i = 0; i < n; i++) //счетчик, он же номер текущей строки, он же количество ненулевых элементов предыдущей строки
+	{
+		for (int j = 0; j < n - i; j++)
+		{
+			if (j == n - i - 1) // находим позицию первого числа строки
+			{
+				cout << 1 << "       ";
+				for (int f = 1; f <= i; f++) //после первого числа дописываем строку из i элементов
+				{
+					//вычисление элемента
+					num = 1;
+					for (int x = 0; x < (i - f); x++)
+					{
+						num *= (i - x);
+						num /= (x + 1);
+					}
+
+					num2 = num;
+					cout << num2;
+
+					len = 0;
+					while (num2)
+					{
+						len++;
+						num2 /= 10;
+					}
+					
+					for (int l = 0; l < (8 - len); l++)
+						cout << " ";
+				}
+			}
+			else
+				cout << "    "; // если рисовать до 30 строк, дл€ красоты надо 4 места на одну позицию
+		}
+		cout << endl;// << endl;
+	}
+#endif // PASCAL_CLEAR
+
 
 }
